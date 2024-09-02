@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* agogochopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* agogochopTests.m */; };
+		0111286B8C8F409CA68B95FD /* Helvetica-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13977534319346D883466988 /* Helvetica-Oblique.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-agogochop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-agogochop.a */; };
+		1127F19D014549D5BA6A380C /* Helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1160E81338A84EA299AB591E /* Helvetica.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-agogochop-agogochopTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-agogochop-agogochopTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		6B614366A57043129655CDD1 /* helvetica-compressed-5871d14b6903a.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E9BBA5F3A9A4ABDA81CFEEE /* helvetica-compressed-5871d14b6903a.otf */; };
-		7845550358204A548AB83950 /* helvetica-rounded-bold-5871d05ead8de.otf in Resources */ = {isa = PBXBuildFile; fileRef = 05004702EC5D41CF96E3BA8B /* helvetica-rounded-bold-5871d05ead8de.otf */; };
-		4CF828DD699F429DA0C2F3EB /* Helvetica-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B41F37AC82AE4E2E8F4B5A40 /* Helvetica-Bold.ttf */; };
-		87B4D5C3C4E14821AE857862 /* Helvetica-BoldOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E02794165DC04D91852DBB93 /* Helvetica-BoldOblique.ttf */; };
-		0111286B8C8F409CA68B95FD /* Helvetica-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13977534319346D883466988 /* Helvetica-Oblique.ttf */; };
-		1127F19D014549D5BA6A380C /* Helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1160E81338A84EA299AB591E /* Helvetica.ttf */; };
 		288FD2ED0DB8417DAF1ADB36 /* helvetica-light-587ebe5a59211.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9365E620B48484C99F32E55 /* helvetica-light-587ebe5a59211.ttf */; };
+		4CF828DD699F429DA0C2F3EB /* Helvetica-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B41F37AC82AE4E2E8F4B5A40 /* Helvetica-Bold.ttf */; };
+		6B614366A57043129655CDD1 /* helvetica-compressed-5871d14b6903a.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E9BBA5F3A9A4ABDA81CFEEE /* helvetica-compressed-5871d14b6903a.otf */; };
+		7699B88040F8A987B510C191 /* libPods-agogochop-agogochopTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-agogochop-agogochopTests.a */; };
+		7845550358204A548AB83950 /* helvetica-rounded-bold-5871d05ead8de.otf in Resources */ = {isa = PBXBuildFile; fileRef = 05004702EC5D41CF96E3BA8B /* helvetica-rounded-bold-5871d05ead8de.otf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		87B4D5C3C4E14821AE857862 /* Helvetica-BoldOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E02794165DC04D91852DBB93 /* Helvetica-BoldOblique.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,9 @@
 		00E356EE1AD99517003FC87E /* agogochopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = agogochopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* agogochopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = agogochopTests.m; sourceTree = "<group>"; };
+		05004702EC5D41CF96E3BA8B /* helvetica-rounded-bold-5871d05ead8de.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "helvetica-rounded-bold-5871d05ead8de.otf"; path = "../src/assets/fonts/helvetica-rounded-bold-5871d05ead8de.otf"; sourceTree = "<group>"; };
+		1160E81338A84EA299AB591E /* Helvetica.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Helvetica.ttf; path = ../src/assets/fonts/Helvetica.ttf; sourceTree = "<group>"; };
+		13977534319346D883466988 /* Helvetica-Oblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica-Oblique.ttf"; path = "../src/assets/fonts/Helvetica-Oblique.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* agogochop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agogochop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = agogochop/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = agogochop/AppDelegate.mm; sourceTree = "<group>"; };
@@ -45,19 +48,16 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = agogochop/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-agogochop-agogochopTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-agogochop-agogochopTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-agogochop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agogochop.debug.xcconfig"; path = "Target Support Files/Pods-agogochop/Pods-agogochop.debug.xcconfig"; sourceTree = "<group>"; };
+		4E9BBA5F3A9A4ABDA81CFEEE /* helvetica-compressed-5871d14b6903a.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "helvetica-compressed-5871d14b6903a.otf"; path = "../src/assets/fonts/helvetica-compressed-5871d14b6903a.otf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-agogochop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agogochop.release.xcconfig"; path = "Target Support Files/Pods-agogochop/Pods-agogochop.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-agogochop-agogochopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agogochop-agogochopTests.debug.xcconfig"; path = "Target Support Files/Pods-agogochop-agogochopTests/Pods-agogochop-agogochopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-agogochop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-agogochop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = agogochop/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-agogochop-agogochopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agogochop-agogochopTests.release.xcconfig"; path = "Target Support Files/Pods-agogochop-agogochopTests/Pods-agogochop-agogochopTests.release.xcconfig"; sourceTree = "<group>"; };
+		B41F37AC82AE4E2E8F4B5A40 /* Helvetica-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica-Bold.ttf"; path = "../src/assets/fonts/Helvetica-Bold.ttf"; sourceTree = "<group>"; };
+		C9365E620B48484C99F32E55 /* helvetica-light-587ebe5a59211.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "helvetica-light-587ebe5a59211.ttf"; path = "../src/assets/fonts/helvetica-light-587ebe5a59211.ttf"; sourceTree = "<group>"; };
+		E02794165DC04D91852DBB93 /* Helvetica-BoldOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica-BoldOblique.ttf"; path = "../src/assets/fonts/Helvetica-BoldOblique.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		4E9BBA5F3A9A4ABDA81CFEEE /* helvetica-compressed-5871d14b6903a.otf */ = {isa = PBXFileReference; name = "helvetica-compressed-5871d14b6903a.otf"; path = "../src/assets/fonts/helvetica-compressed-5871d14b6903a.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		05004702EC5D41CF96E3BA8B /* helvetica-rounded-bold-5871d05ead8de.otf */ = {isa = PBXFileReference; name = "helvetica-rounded-bold-5871d05ead8de.otf"; path = "../src/assets/fonts/helvetica-rounded-bold-5871d05ead8de.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B41F37AC82AE4E2E8F4B5A40 /* Helvetica-Bold.ttf */ = {isa = PBXFileReference; name = "Helvetica-Bold.ttf"; path = "../src/assets/fonts/Helvetica-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E02794165DC04D91852DBB93 /* Helvetica-BoldOblique.ttf */ = {isa = PBXFileReference; name = "Helvetica-BoldOblique.ttf"; path = "../src/assets/fonts/Helvetica-BoldOblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		13977534319346D883466988 /* Helvetica-Oblique.ttf */ = {isa = PBXFileReference; name = "Helvetica-Oblique.ttf"; path = "../src/assets/fonts/Helvetica-Oblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1160E81338A84EA299AB591E /* Helvetica.ttf */ = {isa = PBXFileReference; name = "Helvetica.ttf"; path = "../src/assets/fonts/Helvetica.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C9365E620B48484C99F32E55 /* helvetica-light-587ebe5a59211.ttf */ = {isa = PBXFileReference; name = "helvetica-light-587ebe5a59211.ttf"; path = "../src/assets/fonts/helvetica-light-587ebe5a59211.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +120,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		37491B0822F049DBB81DDC22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4E9BBA5F3A9A4ABDA81CFEEE /* helvetica-compressed-5871d14b6903a.otf */,
+				05004702EC5D41CF96E3BA8B /* helvetica-rounded-bold-5871d05ead8de.otf */,
+				B41F37AC82AE4E2E8F4B5A40 /* Helvetica-Bold.ttf */,
+				E02794165DC04D91852DBB93 /* Helvetica-BoldOblique.ttf */,
+				13977534319346D883466988 /* Helvetica-Oblique.ttf */,
+				1160E81338A84EA299AB591E /* Helvetica.ttf */,
+				C9365E620B48484C99F32E55 /* helvetica-light-587ebe5a59211.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,21 +177,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		37491B0822F049DBB81DDC22 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				4E9BBA5F3A9A4ABDA81CFEEE /* helvetica-compressed-5871d14b6903a.otf */,
-				05004702EC5D41CF96E3BA8B /* helvetica-rounded-bold-5871d05ead8de.otf */,
-				B41F37AC82AE4E2E8F4B5A40 /* Helvetica-Bold.ttf */,
-				E02794165DC04D91852DBB93 /* Helvetica-BoldOblique.ttf */,
-				13977534319346D883466988 /* Helvetica-Oblique.ttf */,
-				1160E81338A84EA299AB591E /* Helvetica.ttf */,
-				C9365E620B48484C99F32E55 /* helvetica-light-587ebe5a59211.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -321,6 +321,20 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-agogochop/Pods-agogochop-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		126EB90D446B4006A5B4064F /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Upload Debug Symbols to Sentry";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh ../node_modules/@sentry/react-native/scripts/sentry-xcode-debug-files.sh";
+		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,20 +448,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
-		};
-		126EB90D446B4006A5B4064F /* Upload Debug Symbols to Sentry */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			name = "Upload Debug Symbols to Sentry";
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			shellScript = "/bin/sh ../node_modules/@sentry/react-native/scripts/sentry-xcode-debug-files.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 

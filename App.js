@@ -1,7 +1,9 @@
 import React from 'react';
 import * as Sentry from '@sentry/react-native';
-import { View, Text } from 'react-native';
+import { PaperProvider } from 'react-native-paper';
 import config from './src/config';
+import AppNetworkProvider from './src/Contexts/AppNetworkProvider';
+import Navigation from './src/Navigation';
 
 Sentry.init({
   dsn: config.sentry_dsn,
@@ -11,9 +13,11 @@ Sentry.init({
 
 const App = () => {
   return (
-    <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-      <Text>AgogoChop: {config.env}</Text>
-    </View>
+    <PaperProvider>
+      <AppNetworkProvider>
+        <Navigation />
+      </AppNetworkProvider>
+    </PaperProvider>
   );
 };
 

@@ -1,6 +1,4 @@
-const {
-  withSentryConfig
-} = require("@sentry/react-native/metro");
+const { withSentryConfig } = require('@sentry/react-native/metro');
 
 module.exports = withSentryConfig({
   transformer: {
