@@ -29,4 +29,3 @@
 - `To automaticaly prettify all files:` yarn pretty
 - `Build the Android beta app using:` yarn android:beta
 - `Build the iOS beta app using:` yarn ios:beta
-
