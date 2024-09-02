@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from '@rneui/base';
+import { useTranslation } from 'react-i18next';
 import { Platform } from 'react-native';
 import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navigation';
 import CartNavigator from './CartNavigator';
@@ -12,6 +13,8 @@ import Colors from '../../Constants/Colors';
 const Tab = createMaterialBottomTabNavigator();
 
 const TabNavigator = () => {
+  const { t } = useTranslation();
+
   return (
     <Tab.Navigator
       initialRouteName="MarketplaceHome"
@@ -30,7 +33,7 @@ const TabNavigator = () => {
           tabBarIcon: (props) => {
             return <Icon name="home" size={24} color={props.color} />;
           },
-          // tabBarLabel: t('marketplace.home'),
+          tabBarLabel: t('home'),
         }}
       />
       <Tab.Screen
@@ -40,7 +43,7 @@ const TabNavigator = () => {
           tabBarIcon: (props) => {
             return <Icon name="soup-kitchen" size={24} color={props.color} />;
           },
-          // tabBarLabel: t('marketplace.home'),
+          tabBarLabel: t('mykitchen'),
         }}
       />
       <Tab.Screen
@@ -51,7 +54,7 @@ const TabNavigator = () => {
             return <Icon name="shopping-cart" size={24} color={props.color} />;
           },
           tabBarBadge: 1,
-          // tabBarLabel: t('marketplace.home'),
+          tabBarLabel: t('cart'),
         }}
       />
       <Tab.Screen
@@ -68,7 +71,7 @@ const TabNavigator = () => {
               />
             );
           },
-          // tabBarLabel: t('marketplace.home'),
+          tabBarLabel: t('profile'),
         }}
       />
       <Tab.Screen
@@ -78,7 +81,7 @@ const TabNavigator = () => {
           tabBarIcon: (props) => {
             return <Icon name="reorder" size={24} color={props.color} />;
           },
-          // tabBarLabel: t('marketplace.home'),
+          tabBarLabel: t('more'),
         }}
       />
     </Tab.Navigator>

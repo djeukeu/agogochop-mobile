@@ -372,6 +372,10 @@ PODS:
     - React-jsi (= 0.70.15)
     - React-logger (= 0.70.15)
     - React-perflogger (= 0.70.15)
+  - RNCAsyncStorage (2.0.0):
+    - React-Core
+  - RNLocalize (2.2.5):
+    - React-Core
   - RNScreens (3.32.0):
     - React-Core
     - React-RCTImage
@@ -449,6 +453,8 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - RNLocalize (from `../node_modules/react-native-localize`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
@@ -544,6 +550,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNLocalize:
+    :path: "../node_modules/react-native-localize"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   RNSentry:
@@ -602,6 +612,8 @@ SPEC CHECKSUMS:
   React-RCTVibration: 12a2a859fa22368d2fc3ca7594504fd130b91a18
   React-runtimeexecutor: 04332dda2f2335ea4ddaf9255de069d3269f4e8b
   ReactCommon: 200471e0841cf2f7cde1fa2ef3d3c199ed970c07
+  RNCAsyncStorage: d35c79ffba52c1013013e16b1fc295aec2feabb6
+  RNLocalize: f0fbcea2a28981985dfe468129674f47847787b1
   RNScreens: afdbd43bcd6c81559917054da18ad101b4395000
   RNSentry: e9aa15bb2f3e18c822c002eea13bbd3b222ab493
   RNVectorIcons: 2460708549c727a3f69de7d4f0b4c7d84b8e84f5

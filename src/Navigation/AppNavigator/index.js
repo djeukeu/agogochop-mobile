@@ -1,5 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useTranslation } from 'react-i18next';
 import Colors from '../../Constants/Colors';
 import AuthNavigator from '../AuthNavigator';
 import TabNavigator from '../TabNavigator';
@@ -7,13 +8,15 @@ import TabNavigator from '../TabNavigator';
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
+  const { t } = useTranslation();
+
   return (
     <Stack.Navigator
       initialRouteName="Tab"
       screenOptions={{
         statusBarColor: Colors.primary,
         contentStyle: { backgroundColor: Colors.background },
-        // headerBackTitle: t('back'),
+        headerBackTitle: t('back'),
       }}>
       <Stack.Screen
         name="Auth"
