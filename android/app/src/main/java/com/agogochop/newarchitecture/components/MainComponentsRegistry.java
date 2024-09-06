@@ -1,4 +1,4 @@
-package com.agogochop.newarchitecture.components;
+package com.agogochop.marketplace.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

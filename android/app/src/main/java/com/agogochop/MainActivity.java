@@ -1,4 +1,4 @@
-package com.agogochop;
+package com.agogochop.marketplace;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

@@ -1,4 +1,4 @@
-package com.agogochop.newarchitecture.modules;
+package com.agogochop.marketplace.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
