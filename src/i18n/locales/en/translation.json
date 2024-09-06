@@ -4,5 +4,24 @@
   "mykitchen": "My Kitchen",
   "cart": "Cart",
   "profile": "Profile",
-  "more": "More"
+  "more": "More",
+  "login": {
+    "txt": "Login",
+    "email": "Email",
+    "emailReq": "Email is required",
+    "number": "Phone number",
+    "numberReq": "Phone number is required",
+    "password": "Password",
+    "passwordRequired": "Password of at least 8 characters is required",
+    "forgotPassword": "Forgot password ?",
+    "loginWith": "or login with",
+    "no-account": "Don't have an account ?",
+    "register": "Register",
+    "emailLogin": "Email",
+    "phoneLogin": "Phone"
+  },
+  "countryPicker": {
+    "nocountry": "No Country found.",
+    "searchcountry": "Search your country"
+  }
 }
