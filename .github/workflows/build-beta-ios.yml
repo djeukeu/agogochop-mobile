@@ -77,7 +77,7 @@ jobs:
           cd ios && pod install
       - name: Write google services file
         run: |
-          cd ios/marketti
+          cd ios/agogochop
           echo '${{ secrets.IOS_GOOGLE_SERVICES }}' > GoogleService-Info.plist
       - name: Write sentry auth file
         run: |
