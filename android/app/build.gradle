@@ -213,7 +213,7 @@ android {
         }
     }
     signingConfigs {
-         debug {
+        debug {
             storeFile file('debug.keystore')
             storePassword 'android'
             keyAlias 'androiddebugkey'
@@ -225,7 +225,7 @@ android {
                 storePassword System.env.ANDROID_UPLOAD_STORE_PASSWORD
                 keyAlias System.env.ANDROID_UPLOAD_KEY_ALIAS
                 keyPassword System.env.ANDROID_UPLOAD_KEY_PASSWORD
-            } else{
+            } else {
                 storeFile file('debug.keystore')
                 storePassword 'android'
                 keyAlias 'androiddebugkey'
