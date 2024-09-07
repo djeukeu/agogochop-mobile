@@ -1,0 +1,107 @@
+name: iOS Beta Build
+run-name: ${{ github.actor }} triggered the iOS Beta Build
+
+on:
+  push:
+    branches:
+      - develop
+
+env:
+  SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+  API_URL: ${{ secrets.STAGING_API_URL }}
+  APP_ENV: ${{ secrets.STAGING_APP_ENV }}
+  MATCH_GIT_TOKEN: ${{ secrets.MATCH_GIT_TOKEN }}
+  MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+  MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+  APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+  APPLE_KEY_ID: ${{ secrets.APPLE_KEY_ID }}
+  APPLE_KEY_ISSUER_ID: ${{ secrets.APPLE_KEY_ISSUER_ID }}
+  APPLE_KEY_CONTENT: ${{ secrets.APPLE_KEY_CONTENT }}
+  IOS_WORKSPACE_PATH: ${{ secrets.IOS_WORKSPACE_PATH }}
+  IOS_OUTPUT_PATH: ${{ secrets.IOS_OUTPUT_PATH }}
+  IOS_TEST_GROUPS: ${{ vars.IOS_TEST_GROUPS }}
+  IOS_APP_ID: ${{ secrets.IOS_APP_ID }}
+
+jobs:
+  ios:
+    name: Build iOS
+    runs-on: macos-13
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Version Code
+        id: version_code
+        run: |
+          echo "::set-output name=number::$(git rev-list --count HEAD)"
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '3.1.x'
+      - name: Install Gitversion
+        uses: gittools/actions/gitversion/setup@v0.9.6
+        with:
+          versionSpec: '5.12.0'
+      - name: Use Gitversion
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.6
+        with:
+          additionalArguments: '/nonormalize'
+          useConfigFile: true
+          configFilePath: GitVersion.yml
+      - name: Set up Ruby
+        uses: ruby/setup-ruby-pkgs@v1
+        with:
+          ruby-version: '3.3.1'
+          bundler-cache: true
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.12.0
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Cache Pods
+        uses: actions/cache@v3
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      - name: Install project dependencies
+        run: |
+          yarn
+          cd ios && pod install
+      - name: Write google services file
+        run: |
+          cd ios/marketti
+          echo '${{ secrets.IOS_GOOGLE_SERVICES }}' > GoogleService-Info.plist
+      - name: Write sentry auth file
+        run: |
+          cd ios
+          echo '${{ secrets.SENTRY_PROPERTIES }}' > sentry.properties
+      - uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Install Fastlane
+        run: gem install fastlane -N
+      - name: Bundle install
+        run: |
+          cd ios
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+      - name: Fastlane Build
+        id: release_beta
+        run: |
+          yarn ios:beta
+        env:
+          VERSION_CODE: ${{ steps.version_code.outputs.number }}
+          MAJOR_VERSION: ${{ steps.gitversion.outputs.major }}
+          MINOR_VERSION: ${{ steps.gitversion.outputs.minor }}
+          PATCH_VERSION: ${{ steps.gitversion.outputs.commitsSinceVersionSource }}
