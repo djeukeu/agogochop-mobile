@@ -1,0 +1,6 @@
+type("appstore") 
+app_identifier("com.agogochop.marketplace")
+team_id(ENV["APPLE_TEAM_ID"]) 
+git_url(ENV["MATCH_GIT_URL"])
+storage_mode("git")
+git_branch("master")
