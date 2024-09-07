@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} triggered the Android Release Build
 on:
   push:
     branches:
-      - master
+      - release
 
 env:
   API_URL: ${{ secrets.PRODUCTION_API_URL }}
