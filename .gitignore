@@ -71,3 +71,5 @@ signing.properties
 .env.staging
 .env.production
 .env.development
+*.p8
+android-release-key.json
