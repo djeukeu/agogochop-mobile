@@ -16,4 +16,13 @@ platform :android do
 
   end
 
+  desc "Submit a new apk for release"
+  lane :release do
+
+    gradle(task: 'clean bundleRelease')
+  
+    upload_to_play_store
+
+  end
+
 end

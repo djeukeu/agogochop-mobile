@@ -1,29 +1,31 @@
-name: Android Beta Build
-run-name: ${{ github.actor }} triggered the Android Beta Build
+name: Android Release Build
+run-name: ${{ github.actor }} triggered the Android Release Build
 
 on:
   push:
     branches:
-      - develop
+      - master
 
 env:
+  API_URL: ${{ secrets.PRODUCTION_API_URL }}
+  APP_ENV: ${{ secrets.PRODUCTION_APP_ENV }}
   SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
-  API_URL: ${{ secrets.STAGING_API_URL }}
-  APP_ENV: ${{ secrets.STAGING_APP_ENV }}
-  FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
   ANDROID_APP_ID: ${{ secrets.ANDROID_APP_ID }}
-  ANDROID_TEST_GROUPS: ${{ vars.ANDROID_TEST_GROUPS }}
+  ANDROID_UPLOAD_STORE_FILE: ${{ secrets.ANDROID_UPLOAD_STORE_FILE }}
+  ANDROID_UPLOAD_STORE_PASSWORD: ${{ secrets.ANDROID_UPLOAD_STORE_PASSWORD }}
+  ANDROID_UPLOAD_KEY_ALIAS: ${{ secrets.ANDROID_UPLOAD_KEY_ALIAS }}
+  ANDROID_UPLOAD_KEY_PASSWORD: ${{ secrets.ANDROID_UPLOAD_KEY_PASSWORD }}
 
 jobs:
   android:
-    name: Build Android
+    name: Release Android
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Version Code
+      - name: Extract Version Code
         id: version_code
         run: |
           echo "::set-output name=number::$(git rev-list --count HEAD)"
@@ -42,13 +44,12 @@ jobs:
           useConfigFile: true
           configFilePath: GitVersion.yml
       - name: Set up Ruby
-        uses: ruby/setup-ruby-pkgs@v1
+        uses: actions/setup-ruby@v1
         with:
-          ruby-version: '3.3.1'
           bundler-cache: true
       - uses: actions/setup-node@v3
         with:
-          node-version: 18.12.0
+          node-version: 16.13.2
       - name: Cache node modules
         uses: actions/cache@v3
         with:
@@ -64,6 +65,10 @@ jobs:
         run: |
           cd android/app
           echo '${{ secrets.ANDROID_GOOGLE_SERVICES }}' > google-services.json
+      - name: Write android release key file
+        run: |
+          cd android
+          echo '${{ secrets.ANDROID_RELEASE_KEY }}' > android-release-key.json
       - name: Write sentry auth file
         run: |
           cd android
@@ -93,7 +98,7 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Fastlane Build
         run: |
-          yarn android:beta
+          yarn android:release
         env:
           VERSION_CODE: ${{ steps.version_code.outputs.number }}
           MAJOR_VERSION: ${{ steps.gitversion.outputs.major }}
