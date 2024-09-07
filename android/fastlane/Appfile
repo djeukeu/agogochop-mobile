@@ -1,2 +1,2 @@
-# json_key_file("") 
+json_key_file("android-release-key.json")
 package_name("com.agogochop.marketplace")

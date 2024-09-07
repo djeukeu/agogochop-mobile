@@ -1,0 +1,106 @@
+name: Android Release Build
+run-name: ${{ github.actor }} triggered the Android Release Build
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  API_URL: ${{ secrets.PRODUCTION_API_URL }}
+  APP_ENV: ${{ secrets.PRODUCTION_APP_ENV }}
+  SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+  ANDROID_APP_ID: ${{ secrets.ANDROID_APP_ID }}
+  ANDROID_UPLOAD_STORE_FILE: ${{ secrets.ANDROID_UPLOAD_STORE_FILE }}
+  ANDROID_UPLOAD_STORE_PASSWORD: ${{ secrets.ANDROID_UPLOAD_STORE_PASSWORD }}
+  ANDROID_UPLOAD_KEY_ALIAS: ${{ secrets.ANDROID_UPLOAD_KEY_ALIAS }}
+  ANDROID_UPLOAD_KEY_PASSWORD: ${{ secrets.ANDROID_UPLOAD_KEY_PASSWORD }}
+
+jobs:
+  android:
+    name: Release Android
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Extract Version Code
+        id: version_code
+        run: |
+          echo "::set-output name=number::$(git rev-list --count HEAD)"
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '3.1.x'
+      - name: Install Gitversion
+        uses: gittools/actions/gitversion/setup@v0.9.6
+        with:
+          versionSpec: '5.12.0'
+      - name: Use Gitversion
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.6
+        with:
+          additionalArguments: '/nonormalize'
+          useConfigFile: true
+          configFilePath: GitVersion.yml
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.13.2
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install project dependencies & Firebase CLI
+        run: |
+          yarn
+          npm install -g firebase-tools
+      - name: Write google services file
+        run: |
+          cd android/app
+          echo '${{ secrets.ANDROID_GOOGLE_SERVICES }}' > google-services.json
+      - name: Write android release key file
+        run: |
+          cd android
+          echo '${{ secrets.ANDROID_RELEASE_KEY }}' > android-release-key.json
+      - name: Write sentry auth file
+        run: |
+          cd android
+          echo '${{ secrets.SENTRY_PROPERTIES }}' > sentry.properties
+      - uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Install Fastlane
+        run: gem install fastlane -N
+      - name: Install Bundler
+        run: gem install bundler
+      - name: Bundle install
+        run: |
+          cd android
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Fastlane Build
+        run: |
+          yarn android:release
+        env:
+          VERSION_CODE: ${{ steps.version_code.outputs.number }}
+          MAJOR_VERSION: ${{ steps.gitversion.outputs.major }}
+          MINOR_VERSION: ${{ steps.gitversion.outputs.minor }}
+          PATCH_VERSION: ${{ steps.gitversion.outputs.commitsSinceVersionSource }}
