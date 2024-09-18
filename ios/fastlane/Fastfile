@@ -47,26 +47,6 @@ platform :ios do
       changelog: "Happy Testing !!!😄",
       groups: ENV['IOS_TEST_GROUPS'],
       distribute_external: true,
-      beta_app_review_info: {
-        contact_email: "christian@djeukeu.com",
-        contact_first_name: "Christian",
-        contact_last_name: "Djeukeu",
-        contact_phone: "+4407474926221",
-        notes: "Happy Testing !!!😄",
-      },
-      localized_app_info: {
-        "default": {
-          feedback_email: "christian@djeukeu.com",
-          marketing_url: "https://djeukeu.com/",
-          privacy_policy_url: "https://genius-home.org/privacy_policy",
-          description: "Default description",
-        },
-      },
-      localized_build_info: {
-        "default": {
-          whats_new: "Default changelog",
-        },
-      }
     )
 
   end
